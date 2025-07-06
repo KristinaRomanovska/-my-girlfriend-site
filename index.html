@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Для моєї прекрасної дівчини ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #ffe6f2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #5c005c;
+      overflow: hidden;
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur859.cur'), auto;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+    #compliment {
+      font-size: 1.8em;
+      margin: 20px;
+      min-height: 50px;
+      transition: opacity 0.4s ease;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #d14d72;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 5;
+    }
+    button:hover {
+      background-color: #b03c5b;
+    }
+    .cat-side {
+      position: fixed;
+      width: 100px;
+      animation: float 3s ease-in-out infinite;
+      z-index: 10;
+      opacity: 0.8;
+    }
+    .cat-left {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .cat-right {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) scaleX(-1);
+    }
+    @keyframes float {
+      0% { transform: translateY(-50%) translateY(-10px); }
+      50% { transform: translateY(-50%) translateY(10px); }
+      100% { transform: translateY(-50%) translateY(-10px); }
+    }
+    .cat-hanging {
+      position: fixed;
+      width: 120px;
+      top: 0;
+      animation: swing 4s ease-in-out infinite;
+      z-index: 9;
+      opacity: 0.9;
+    }
+    .cat-hanging.left {
+      left: 20%;
+      transform-origin: top center;
+    }
+    .cat-hanging.right {
+      right: 20%;
+      transform-origin: top center;
+    }
+    @keyframes swing {
+      0% { transform: rotate(-10deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(-10deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Бокові котики -->
+  <img class="cat-side cat-left" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="котик">
+  <img class="cat-side cat-right" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="котик">
+
+  <!-- Висячі котики -->
+  <img class="cat-hanging left" src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="котик на мотузці">
+  <img class="cat-hanging right" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="котик на мотузці">
+
+  <h1>❤️ Привіт, моє сонечко! ❤️</h1>
+  <div id="compliment">Натисни кнопку, щоб отримати комплімент 😊</div>
+  <button onclick="showCompliment()">Показати комплімент</button>
+
+  <script>
+    const compliments = [
+      "Ти найчарівніша дівчина у світі!",
+      "Твоя усмішка робить мій день яскравішим 😊",
+      "Ти надзвичайно сильна і неймовірно красива ❤️",
+      "Ти — мій найкращий друг і найбільше щастя 🌸",
+      "Я не можу уявити життя без тебе 💖",
+      "Ти робиш цей світ кращим лише своєю присутністю 🌟",
+      "Ти — найкраще, що зі мною траплялося 🥰",
+      "Твої очі сяють яскравіше за зірки ✨",
+      "Я так пишаюся тобою і тим, яка ти прекрасна людина 🫶",
+      "Ти заслуговуєш на все найкраще в цьому світі 💐"
+    ];
+
+    function showCompliment() {
+      const index = Math.floor(Math.random() * compliments.length);
+      const complimentEl = document.getElementById('compliment');
+      complimentEl.style.opacity = 0;
+      setTimeout(() => {
+        complimentEl.textContent = compliments[index];
+        complimentEl.style.opacity = 1;
+      }, 400);
+    }
+  </script>
+</body>
+</html>
