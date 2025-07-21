@@ -1,134 +1,112 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Для моєї прекрасної дівчини ❤️</title>
-  <!-- Підключаємо красивий рукописний шрифт Dancing Script -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Ты сводишь меня с ума 😈</title>
   <style>
-    html {
-      color-scheme: light; /* Фіксуємо світлу тему, щоб браузер не міняв кольори */
-    }
     body {
       margin: 0;
-      padding: 0;
-      height: 100vh;
-      font-family: 'Dancing Script', cursive, sans-serif; /* Використовуємо новий шрифт */
-      background: linear-gradient(135deg, #ffd6e0, #ffe6f2);
-      color: #5c005c;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur859.cur'), auto;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-    }
-    #compliment {
-      font-size: 1.8em;
-      margin: 20px;
-      min-height: 50px;
-      transition: opacity 0.4s ease;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 1.2em;
+      background: linear-gradient(135deg, #ff0066, #ffcc00);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       color: white;
-      background-color: #d14d72;
-      border: none;
-      border-radius: 10px;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .button {
+      background: black;
+      color: white;
+      padding: 15px 30px;
+      border: 2px solid hotpink;
+      border-radius: 30px;
+      font-size: 1.3em;
+      margin: 15px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      z-index: 5;
+      box-shadow: 0 0 15px hotpink;
+      transition: all 0.3s ease;
     }
-    button:hover {
-      background-color: #b03c5b;
+
+    .button:hover {
+      background: hotpink;
+      color: black;
+      transform: scale(1.1);
     }
-    .cat-side {
-      position: fixed;
-      width: 100px;
-      animation: float 3s ease-in-out infinite;
-      z-index: 10;
-      opacity: 0.8;
+
+    .message {
+      display: none;
+      font-size: 1.5em;
+      margin-top: 30px;
+      animation: appear 1s ease-in-out forwards;
+      text-shadow: 1px 1px 10px black;
     }
-    .cat-left {
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+
+    @keyframes appear {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
     }
-    .cat-right {
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%) scaleX(-1);
+
+    .emoji {
+      font-size: 2.5em;
+      margin-top: 20px;
     }
-    @keyframes float {
-      0% { transform: translateY(-50%) translateY(-10px); }
-      50% { transform: translateY(-50%) translateY(10px); }
-      100% { transform: translateY(-50%) translateY(-10px); }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
     }
-    .cat-hanging {
-      position: fixed;
-      width: 120px;
-      top: 0;
-      animation: swing 4s ease-in-out infinite;
-      z-index: 9;
-      opacity: 0.9;
-    }
-    .cat-hanging.left {
-      left: 20%;
-      transform-origin: top center;
-    }
-    .cat-hanging.right {
-      right: 20%;
-      transform-origin: top center;
-    }
-    @keyframes swing {
-      0% { transform: rotate(-10deg); }
-      50% { transform: rotate(10deg); }
-      100% { transform: rotate(-10deg); }
+
+    .spicy {
+      color: #ffd700;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <!-- Бокові котики -->
-  <img class="cat-side cat-left" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="котик">
-  <img class="cat-side cat-right" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="котик">
+  <div class="container">
+    <h1>Ты такая непослушная... и мне это нравится 😈</h1>
+    <p>Этот сайт — как я: вся только для тебя и только ночью) 🔥</p>
 
-  <!-- Висячі котики -->
-  <img class="cat-hanging left" src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="котик на мотузці">
-  <img class="cat-hanging right" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="котик на мотузці">
+    <button class="button" onclick="showText('msg1')">Скажи мне это ещё раз 💦</button>
+    <button class="button" onclick="showText('msg2')">дразни меня 😏</button>
+    <button class="button" onclick="showText('msg3')">Что ты со мной сделала 😩</button>
+    <button class="button" onclick="showText('msg4')">Я хочу тебя... прямо сейчас 💋</button>
 
-  <h1>❤️ Привіт, моє сонечко! ❤️</h1>
-  <div id="compliment">Натисни кнопку, щоб отримати комплімент 😊</div>
-  <button onclick="showCompliment()">Показати комплімент</button>
+    <div class="message" id="msg1">
+      Когда ты шепчешь мне в ухо — я теряю контроль... <br>
+      <span class="spicy">И в голове только ты. Без одежды. И без стыда.</span>
+      <div class="emoji">👄🔥</div>
+    </div>
+
+    <div class="message" id="msg2">
+      Ты знаешь, как меня заводить.<br>
+      Каждый твой взгляд — как прикосновение под одеждой.<br>
+      <span class="spicy">Не останавливайся. Никогда.</span>
+      <div class="emoji">😈💫</div>
+    </div>
+
+    <div class="message" id="msg3">
+      До тебя я спала спокойно. А теперь? <br>
+      <span class="spicy">Я думаю о тебе, когда ты сладко спишь... и когда ты просыпаешься в майке без лифчика.</span>
+      <div class="emoji">🛏️💭</div>
+    </div>
+
+    <div class="message" id="msg4">
+      Моя фантазия — это ты. На мне. Надо мной. Подо мной. Везде. <br>
+      <span class="spicy">И нет сил больше сдерживаться.</span>
+      <div class="emoji">💥💋</div>
+    </div>
+  </div>
 
   <script>
-    const compliments = [
-      "Ти найчарівніша дівчина у світі!",
-      "Твоя усмішка робить мій день яскравішим 😊",
-      "Ти надзвичайно сильна і неймовірно красива ❤️",
-      "Ти — мій найкращий друг і найбільше щастя 🌸",
-      "Я не можу уявити життя без тебе 💖",
-      "Ти робиш цей світ кращим лише своєю присутністю 🌟",
-      "Ти — найкраще, що зі мною траплялося 🥰",
-      "Твої очі сяють яскравіше за зірки ✨",
-      "Я так пишаюся тобою і тим, яка ти прекрасна людина 🫶",
-      "Ти заслуговуєш на все найкраще в цьому світі 💐"
-    ];
-
-    function showCompliment() {
-      const index = Math.floor(Math.random() * compliments.length);
-      const complimentEl = document.getElementById('compliment');
-      complimentEl.style.opacity = 0;
-      setTimeout(() => {
-        complimentEl.textContent = compliments[index];
-        complimentEl.style.opacity = 1;
-      }, 400);
+    function showText(id) {
+      let messages = document.querySelectorAll('.message');
+      messages.forEach(m => m.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
   </script>
 </body>
